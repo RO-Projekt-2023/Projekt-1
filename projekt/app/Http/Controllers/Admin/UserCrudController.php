@@ -58,10 +58,18 @@ class UserCrudController extends CrudController
         CRUD::setValidation(UserRequest::class);
         CRUD::setFromDb(); // set fields from db columns.
 
+        CRUD::field('name')->validationRules('required|min:5');
+        CRUD::field('email')->validationRules('required|email|unique:users,email');
+        CRUD::field('password')->validationRules('required');
+
         /**
          * Fields can be defined using the fluent syntax:
          * - CRUD::field('price')->type('number');
          */
+
+        \App\Models\User::creating(function ($entry) {
+            $entry->password = \Hash::make($entry->password);
+        });
     }
 
     /**
@@ -72,6 +80,18 @@ class UserCrudController extends CrudController
      */
     protected function setupUpdateOperation()
     {
-        $this->setupCreateOperation();
+        CRUD::field('name')->validationRules('required|min:5');
+        CRUD::field('email')->validationRules('required|email|unique:users,email,'.CRUD::getCurrentEntryId());
+        CRUD::field('password')->hint('Type a password to change it.');
+
+        \App\Models\User::updating(function ($entry) {
+            if (request('password') == null) {
+                $entry->password = $entry->getOriginal('password');
+            } else {
+                $entry->password = \Hash::make(request('password'));
+            }
+        });
+
+        
     }
 }
