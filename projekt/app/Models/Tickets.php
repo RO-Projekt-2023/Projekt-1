@@ -6,7 +6,7 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Residence extends Model
+class Tickets extends Model
 {
     use CrudTrait;
     use HasFactory;
@@ -17,13 +17,18 @@ class Residence extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'residences';
+    protected $table = 'tickets';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
     // protected $fillable = [];
     // protected $hidden = [];
 
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS
@@ -35,10 +40,10 @@ class Residence extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    #add relation to Country (belongs to)
-    public function country()
+    #add relation to event (belongs to)
+    public function event()
     {
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(Events::class);
     }
 
     /*

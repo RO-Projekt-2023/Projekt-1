@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\ResidenceRequest;
+use App\Http\Requests\LocationsRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class ResidenceCrudController
+ * Class LocationsCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class ResidenceCrudController extends CrudController
+class LocationsCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class ResidenceCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Residence::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/residence');
-        CRUD::setEntityNameStrings('residence', 'residences');
+        CRUD::setModel(\App\Models\Locations::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/locations');
+        CRUD::setEntityNameStrings('locations', 'locations');
     }
 
     /**
@@ -55,23 +55,22 @@ class ResidenceCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(ResidenceRequest::class);
+        CRUD::setValidation(LocationsRequest::class);
         CRUD::setFromDb(); // set fields from db columns.
 
         /**
          * Fields can be defined using the fluent syntax:
          * - CRUD::field('price')->type('number');
          */
-
-         //add select for country
-            CRUD::addField([
-                'name' => 'country_id',
-                'label' => 'Country',
-                'type' => 'select',
-                'entity' => 'country',
-                'attribute' => 'name',
-                'model' => "App\Models\Country",
-            ]);
+        //add select for residence
+        CRUD::addField([
+            'name' => 'residence_id',
+            'label' => 'Residence',
+            'type' => 'select',
+            'entity' => 'residence',
+            'attribute' => 'name',
+            'model' => "App\Models\Residence",
+        ]);
     }
 
     /**

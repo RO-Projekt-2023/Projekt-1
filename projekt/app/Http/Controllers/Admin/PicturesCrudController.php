@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\ResidenceRequest;
+use App\Http\Requests\PicturesRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class ResidenceCrudController
+ * Class PicturesCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class ResidenceCrudController extends CrudController
+class PicturesCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class ResidenceCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Residence::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/residence');
-        CRUD::setEntityNameStrings('residence', 'residences');
+        CRUD::setModel(\App\Models\Pictures::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/pictures');
+        CRUD::setEntityNameStrings('pictures', 'pictures');
     }
 
     /**
@@ -55,7 +55,7 @@ class ResidenceCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(ResidenceRequest::class);
+        CRUD::setValidation(PicturesRequest::class);
         CRUD::setFromDb(); // set fields from db columns.
 
         /**
@@ -63,14 +63,14 @@ class ResidenceCrudController extends CrudController
          * - CRUD::field('price')->type('number');
          */
 
-         //add select for country
+         //add select for event
             CRUD::addField([
-                'name' => 'country_id',
-                'label' => 'Country',
+                'name' => 'event_id',
+                'label' => 'Event',
                 'type' => 'select',
-                'entity' => 'country',
+                'entity' => 'event',
                 'attribute' => 'name',
-                'model' => "App\Models\Country",
+                'model' => "App\Models\Events",
             ]);
     }
 

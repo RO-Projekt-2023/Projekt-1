@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\ResidenceRequest;
+use App\Http\Requests\EventsRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class ResidenceCrudController
+ * Class EventsCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class ResidenceCrudController extends CrudController
+class EventsCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class ResidenceCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Residence::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/residence');
-        CRUD::setEntityNameStrings('residence', 'residences');
+        CRUD::setModel(\App\Models\Events::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/events');
+        CRUD::setEntityNameStrings('events', 'events');
     }
 
     /**
@@ -55,23 +55,38 @@ class ResidenceCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(ResidenceRequest::class);
+        CRUD::setValidation(EventsRequest::class);
         CRUD::setFromDb(); // set fields from db columns.
 
         /**
          * Fields can be defined using the fluent syntax:
          * - CRUD::field('price')->type('number');
          */
+        //add select for location
+        CRUD::addField([
+            'name' => 'location_id',
+            'label' => 'Location',
+            'type' => 'select',
+            'entity' => 'location',
+            'attribute' => 'name',
+            'model' => "App\Models\Locations",
+        ]);
 
-         //add select for country
-            CRUD::addField([
-                'name' => 'country_id',
-                'label' => 'Country',
-                'type' => 'select',
-                'entity' => 'country',
-                'attribute' => 'name',
-                'model' => "App\Models\Country",
-            ]);
+        //add automatic user insert
+        CRUD::addField([
+            'name' => 'user_id',
+            'label' => 'User',
+            'type' => 'hidden',
+            'default' => backpack_user()->id,
+        ]);
+
+        //create IsActive as true or false
+        CRUD::addField([
+            'name' => 'isActive',
+            'label' => 'Is Active',
+            'type' => 'checkbox',
+            'default' => 1,
+        ]);
     }
 
     /**
