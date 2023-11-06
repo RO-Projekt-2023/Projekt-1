@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/archive', 'ArchiveController@index')->name('archive');
+Route::get('/search', 'ArchiveController@search')->name('search');
+
