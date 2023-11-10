@@ -4,5 +4,5 @@
 @section('content')
     <br>
     <br>
-    <h1>Tihi</h1>
+    <h1>MUHAHAHAH</h1>
 @endsection
