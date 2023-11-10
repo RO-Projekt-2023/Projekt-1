@@ -1,0 +1,23 @@
+.main-show-homepage-carusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-show-homepage {
+    padding: 5% 5%;
+    background-color: #DABD6C;
+}
+
+.homepage-main-text{
+    font-size: 64px;
+    font-weight: bold;
+    color: #000000;
+    padding-bottom: 32px;
+}
+
+
+.comedian-image img {
+    width: 100%;
+    height: auto;
+}
