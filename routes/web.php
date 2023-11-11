@@ -23,5 +23,14 @@ Route::get('/archive', function () {
     return view('archive');
 });
 
+Route::get('/events', function () {
+    return view('events');
+});
+
+Route::get('/events/get', function () {
+    return view('getevent');
+});
+
+
 Route::get('/search', 'ArchiveController@search')->name('search');
 
