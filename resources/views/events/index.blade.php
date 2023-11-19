@@ -5,6 +5,7 @@
     <div class="events-container" style="margin-top: 50px;">
         <h1>Events</h1>
         <p>Here you can see all the events that are available.</p>
+    @if(count($events) > 0)
     @foreach($events as $event)
     <div>
         <h2>{{ $event->name }}</h2>
@@ -23,6 +24,9 @@
         @endif
     </div>
     @endforeach
+    @else
+        <p>No events available.</p>
+    @endif
     </div>
 @endsection
 
