@@ -1,64 +1,49 @@
 <?php
-
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Events extends Model
 {
     use CrudTrait;
-    use HasFactory;
-
-    /*
-    |--------------------------------------------------------------------------
-    | GLOBAL VARIABLES
-    |--------------------------------------------------------------------------
-    */
 
     protected $table = 'events';
-    // protected $primaryKey = 'id';
-    // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
-    // protected $hidden = [];
-
-    /*
-    |--------------------------------------------------------------------------
-    | FUNCTIONS
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS
-    |--------------------------------------------------------------------------
-    */
-
 
     public function location()
     {
         return $this->belongsTo(Locations::class);
     }
 
+    public function tickets()
+    {
+        return $this->hasMany(Tickets::class); // Assuming you have a Tickets model
+    }
 
+    public function hasAvailableTickets()
+    {
+        return $this->number_of_tickets > 0;
+    }
 
-    /*
-    |--------------------------------------------------------------------------
-    | SCOPES
-    |--------------------------------------------------------------------------
-    */
+    public function applyForTicket($email)
+    {
+        if ($this->hasAvailableTickets()) {
+            $ticketCode = uniqid(); // Generate a unique ticket code
+            
+            $ticket = $this->tickets()->create([
+                'code' => $ticketCode,
+                'email' => $email,
+                'status' => 0, // Assuming status 0 means pending or not used
+            ]);
 
-    /*
-    |--------------------------------------------------------------------------
-    | ACCESSORS
-    |--------------------------------------------------------------------------
-    */
+            $this->decrement('number_of_tickets');
 
-    /*
-    |--------------------------------------------------------------------------
-    | MUTATORS
-    |--------------------------------------------------------------------------
-    */
+            // Send email with ticket code to $email (Implement your email sending logic here)
+
+            return $ticket;
+        }
+        
+        return null; // No more tickets available for this event
+    }
 }
