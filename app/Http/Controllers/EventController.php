@@ -17,6 +17,32 @@ class EventController extends Controller
         return view('events.index', compact('events'));
     }
 
+    public function archive()
+    {
+        $inactiveEvents = Events::where('isActive', false)->get();
+        return view('events.archive', compact('inactiveEvents'));
+    }
+
+    public function show(Events $event)
+    {
+        return view('events.show', compact('event'));
+    }
+
+    public function search(Request $request)
+    {
+        $searchQuery = $request->input('query');
+
+        $events = Events::where('isActive', true)
+                        ->where(function ($query) use ($searchQuery) {
+                            $query->where('name', 'like', '%' . $searchQuery . '%')
+                                ->orWhere('description', 'like', '%' . $searchQuery . '%');
+                            // Add more conditions for other searchable fields if needed
+                        })
+                        ->get();
+
+        return view('events.search_results', compact('events', 'searchQuery'));
+    }
+
     public function apply(Request $request, Events $event)
     {
         if ($event->number_of_tickets > 0) {
@@ -43,7 +69,6 @@ class EventController extends Controller
             });
 
             return redirect()->back()->with('success', 'Ticket applied successfully!');
-            // Send email with ticket code to $email (Implement your email sending logic here)
 
         } else {
             return redirect()->back()->with('error', 'No more tickets available for this event!');
