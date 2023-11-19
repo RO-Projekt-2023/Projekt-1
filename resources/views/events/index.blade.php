@@ -17,17 +17,7 @@
         <p>Date: {{ $event->date }}</p>
         <p>Price of Tickets: {{ $event->price_of_tickets }}</p>
         <p>Number of Tickets: {{ $event->number_of_tickets }}</p>
-        @if ($event->number_of_tickets > 0)
-            {{ $event->name }} - {{ $event->description }}
-                <a href="{{ route('events.show', $event->id) }}">More Info</a>
-            <form action="{{ route('events.apply', $event) }}" method="post">
-                @csrf
-                <input type="email" name="email" placeholder="Enter your email">
-                <button type="submit">Apply</button>
-            </form>
-        @else
-            <p>No more tickets available for this event.</p>
-        @endif
+        <a href="{{ route('events.show', $event->id) }}">More Info</a>
     </div>
     @endforeach
     @else
