@@ -7,6 +7,8 @@ use App\Models\Events; // Make sure this import points to the correct namespace
 use App\Models\Tickets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail; // Add this line for the Mail facade
+use Illuminate\Support\Facades\Redirect;
+
 
 
 class EventController extends Controller
@@ -68,7 +70,7 @@ class EventController extends Controller
                 $message->to($email)->subject('Ticket Details');
             });
 
-            return redirect()->back()->with('success', 'Ticket applied successfully!');
+            return Redirect::route('events.index')->with('success', 'Ticket purchase successful!');
 
         } else {
             return redirect()->back()->with('error', 'No more tickets available for this event!');

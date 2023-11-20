@@ -3,6 +3,11 @@
 
 @section('content')
     <div class="events-container" style="margin-top: 60px;">
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <form action="{{ route('events.search') }}" method="GET">
         <input type="text" name="query" placeholder="Search events...">
         <button type="submit">Search</button>
