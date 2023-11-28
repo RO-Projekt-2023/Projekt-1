@@ -1,0 +1,70 @@
+/*FFB647 - orange
+363434 - dark grey
+ADADAD - light grey*/
+
+body{
+    background-color: #ADADAD;
+}
+
+h2{
+    color: white;
+    background-color: #363434;
+    padding-bottom: 3em;
+    padding-top: 2em;
+    text-align: center;
+}
+
+#desc{
+    display: inline-block;
+    background-color: white;
+    border-radius: 1.5em;
+    margin-left: 2em;
+    padding: 1.5em;
+    text-align: left;
+    height: auto;
+    width: auto;
+    vertical-align: top;
+}
+
+#info{
+    display: inline-block;
+    background-color: white;
+    border-radius: 1.5em;
+    margin-left: 25em;
+    padding: 2em;
+    text-align: left;
+    height: auto;
+    width: auto;
+}
+
+#info p{
+    display: inline-block;
+    background-color: #FFB647;
+    border-radius: 1.5em;
+    padding: 0.9em;
+    text-align: left;
+    height: auto;
+    width: auto;
+}
+
+#f{
+    text-align: center;
+    background-color: white;
+    border-radius: 1.5em;
+    padding: 1.5em;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2em;
+}
+
+#f button{
+    background-color: #FFB647;
+    border-radius: 4%;
+    padding: 2%;
+    margin: 2%;
+}
+
+#f input{
+    padding: 1em;
+    width: 25em;
+}
