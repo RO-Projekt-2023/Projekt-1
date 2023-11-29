@@ -28,7 +28,7 @@
         @if(count($events) > 0)
             @foreach($events as $event)
                 <div class="event">
-                    <h2>{{ $event->name }}</h2>
+                <p class="name">{{ $event->name }}</p>
                     <b>Date:</b> {{ $event->date }} <br>
                     <b>Location: </b> <br>
                     <b>Price of Tickets:</b>  {{ $event->price_of_tickets }}<br>
@@ -39,6 +39,7 @@
         @else
             <b style ="margin-left:3em;">No events available.</b>
         @endif
+        
 
         
     </div>

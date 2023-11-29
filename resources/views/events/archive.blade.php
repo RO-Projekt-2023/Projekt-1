@@ -15,10 +15,10 @@
         @foreach($inactiveEvents as $event)
         <div class="event-v2">
 
-            <h2>{{ $event->name }}</h2>
+            <p class="name">{{ $event->name }}</p>
             <b>Description:</b> {{ $event->description }} <br>
-            <b>Location:</b>  <br>
             <b>Date:</b> {{ $event->date }} <br>
+            <b>Location:</b> {{ $event->date }} <br>
             <b>Price of Tickets:</b>  {{ $event->price_of_tickets }}€
 </div>
         @endforeach
