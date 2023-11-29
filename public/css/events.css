@@ -2,69 +2,71 @@
 363434 - dark grey
 ADADAD - light grey*/
 
-body{
+body {
     background-color: #ADADAD;
+    margin: 0;
 }
 
-h2{
+h2 {
     color: white;
     background-color: #363434;
-    padding-bottom: 3em;
-    padding-top: 2em;
+    padding: 2em 1em;
     text-align: center;
+    margin: 0;
 }
 
-#desc{
-    display: inline-block;
+#desc,
+#info,
+#f {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    float: left; /* Float left for side-by-side placement */
+    width: 48%; /* Set width to 48% to leave some space between #desc and #info */
+    margin: 1%; /* Add some space between #desc and #info */
     background-color: white;
     border-radius: 1.5em;
-    margin-left: 2em;
     padding: 1.5em;
     text-align: left;
-    height: auto;
-    width: auto;
-    vertical-align: top;
 }
 
-#info{
-    display: inline-block;
-    background-color: white;
-    border-radius: 1.5em;
-    margin-left: 25em;
-    padding: 2em;
-    text-align: left;
-    height: auto;
-    width: auto;
+#info {
+    margin-right: 0; /* Remove right margin to eliminate space between #desc and #info */
 }
 
-#info p{
-    display: inline-block;
+#info p {
     background-color: #FFB647;
     border-radius: 1.5em;
     padding: 0.9em;
     text-align: left;
-    height: auto;
-    width: auto;
 }
 
-#f{
+#f {
+    clear: both; /* Clear float to ensure #f is below #desc and #info */
     text-align: center;
-    background-color: white;
-    border-radius: 1.5em;
-    padding: 1.5em;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 2em;
+    margin: 2em 5%;
+    margin-left: 26%;
+    margin-right: 26%;
 }
 
-#f button{
+#f button {
     background-color: #FFB647;
     border-radius: 4%;
     padding: 2%;
     margin: 2%;
 }
 
-#f input{
+#f input {
     padding: 1em;
-    width: 25em;
+    width: 100%;
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 600px) {
+    #desc,
+    #info {
+        width: 100%; /* Make #desc and #info full width on smaller screens */
+        margin: 0; /* Remove margin between #desc and #info */
+    }
+    #info{
+        margin-bottom: 1em;
+    }
 }
