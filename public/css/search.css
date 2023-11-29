@@ -48,7 +48,8 @@ width: 52em;
     float: right;
     width: 27em;
     padding: 2em;
-    height: 38.3em;
+    min-height: 97vh;
+    box-sizing: border-box;
 }
 .search-button {
     height: 40px;
