@@ -7,6 +7,8 @@
     <!-- Include Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('/css/home.css') }}" rel="stylesheet"> 
+    <link href="{{ asset('/css/search.css') }}" rel="stylesheet"> 
+
 </head>
 <body>
     <!-- Bootstrap Menu -->
