@@ -23,7 +23,33 @@ h1 {
 margin-bottom: 1em;
 margin-top: 1em;
 }
-
+#header{
+    color: white;
+    padding-left: 2em;
+}
+.item-container{
+    float: left;
+    margin-top: 30px;
+   
+}
+.event-v2{
+    margin-bottom: 20px;
+    padding: 1.5em;
+    padding-left: 2.5em;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    line-height: 2.5;
+    margin-right: 3em;
+    margin-left: 3em;
+width: 52em;
+}
+.content-container{
+    background-color: #2f2d2e;
+    float: right;
+    width: 27em;
+    padding: 2em;
+    height: 38.3em;
+}
 .search-button {
     height: 40px;
     width: 104px;
