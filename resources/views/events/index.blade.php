@@ -31,7 +31,7 @@
                 <p class="name">{{ $event->name }}</p>
                     <b>Date:</b> {{ $event->date }} <br>
                     <b>Location: </b> <br>
-                    <b>Price of Tickets:</b>  {{ $event->price_of_tickets }}<br>
+                    <b>Price of Tickets:</b>  {{ $event->price_of_tickets }}€<br>
                     <b>Number of Tickets: </b>{{ $event->number_of_tickets }} <br>
                     <a href="{{ route('events.show', $event->id) }}">More Info</a>
                 </div>
