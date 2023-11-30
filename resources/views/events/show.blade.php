@@ -6,6 +6,8 @@
 <div class="events-container" style="margin-top: 60px;">
     <h2>{{ $event->name }}</h2>
 
+    <!-- Display event image -->
+    <img src="{{ asset('storage/' . $event->image) }}" alt="Event Image">
     <div id="info">
         <h4>Date:</h4>
         <p>{{ $event->date }}</p>
