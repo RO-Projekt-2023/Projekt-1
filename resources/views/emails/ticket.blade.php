@@ -310,7 +310,7 @@
               <tr>
                 <td align="left" style="font-size:0px;padding:15px 15px 15px 15px;word-break:break-word;">
                   
-      <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1.5;text-align:left;color:#000000;"><p style="font-size: 11px; font-family: Ubuntu, Helvetica, Arial;"><span style="font-family: Cabin, sans-serif; font-size: 15px;">Za vstop na dogodek boste potrebovali <strong>številko vstopnice</strong>. V primeru kakršnih koli vprašanj ali težav se obrnite na našo podporo strankam na test@vrtgo.si ali na telefonsko številko 032 555 248. </span></p>
+      <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1.5;text-align:left;color:#000000;"><p style="font-size: 11px; font-family: Ubuntu, Helvetica, Arial;"><span style="font-family: Cabin, sans-serif; font-size: 15px;">Za vstop na dogodek boste potrebovali <strong>številko vstopnice</strong>. V primeru kakršnih koli vprašanj ali težav se obrnite na našo podporo strankam na test@vrtogo.si ali na telefonsko številko 032 555 248. </span></p>
 <p style="font-size: 11px; font-family: Ubuntu, Helvetica, Arial;"> </p>
 <p style="font-size: 11px; font-family: Ubuntu, Helvetica, Arial;"><span style="font-family: Cabin, sans-serif; font-size: 15px;">Hvala, ker ste izbrali Jožeta Smeškota za nakup vaše vstopnice. Upamo, da boste uživali na dogodku! </span></p></div>
     
