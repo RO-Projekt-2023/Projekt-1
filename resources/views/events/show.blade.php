@@ -12,7 +12,7 @@
         <h4>Date:</h4>
         <p>{{ $event->date }}</p>
         <h4>Location:</h4>
-        <p>{{ $event->location }}</p>
+        <p>{{ $event->location->name }}</p>
         <h4>Price of Tickets:</h4>
         <p>{{ $event->price_of_tickets }}€</p>
         <h4>Number of Tickets:</h4>

@@ -2,13 +2,6 @@
 
 @section('content')
 
-
-
-
-
-
-
-
     <div class="events-container">
         @if(session('success'))
             <div class="alert alert-success">
@@ -30,7 +23,7 @@
                 <div class="event">
                 <p class="name">{{ $event->name }}</p>
                     <b>Date:</b> {{ $event->date }} <br>
-                    <b>Location: </b> <br>
+                    <b>Location: </b> {{ $event->location->name }}<br>
                     <b>Price of Tickets:</b>  {{ $event->price_of_tickets }}<br>
                     <b>Number of Tickets: </b>{{ $event->number_of_tickets }} <br>
                     <a href="{{ route('events.show', $event->id) }}">More Info</a>

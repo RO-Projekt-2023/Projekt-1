@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\EventsRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Class EventsCrudController
@@ -45,12 +46,7 @@ class EventsCrudController extends CrudController
         CRUD::setFromDb(); // set columns from db columns.
 
         //add column for image
-        CRUD::addColumn([
-            'name' => 'image',
-            'label' => 'Image',
-            'type' => 'image',
-            'prefix' => 'storage/',
-        ]);
+        
 
         /**
          * Columns can be defined using the fluent syntax:
@@ -121,5 +117,36 @@ class EventsCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+     public function store()
+    {
+        $event = new \App\Models\Events;
+        $this->crud->setRequest($this->crud->validateRequest());
+        $event->fill(request()->input())->save();
+
+        $this->handleImageUpload($event);
+
+        return redirect('admin/events');
+    }
+
+    public function update()
+    {
+        $event = \App\Models\Events::findOrFail($this->crud->getCurrentEntryId());
+        $this->crud->setRequest($this->crud->validateRequest());
+        $event->fill(request()->input())->save();
+
+        $this->handleImageUpload($event);
+
+        return redirect('admin/events');
+    }
+
+    private function handleImageUpload($event)
+    {
+        if (request()->hasFile('image')) {
+            $filename = request()->file('image')->store('uploads', 'public');
+            $event->image = $filename;
+            $event->save();
+        }
     }
 }
