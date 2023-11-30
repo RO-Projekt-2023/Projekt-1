@@ -39,6 +39,14 @@ h2 {
     text-align: left;
 }
 
+#top {
+    clear: both; /* Clear float to ensure #f is below #desc and #info */
+    text-align: center;
+    margin: 2em 5%;
+    margin-left: 26%;
+    margin-right: 26%;
+}
+
 #f {
     clear: both; /* Clear float to ensure #f is below #desc and #info */
     text-align: center;

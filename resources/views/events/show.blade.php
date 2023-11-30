@@ -8,7 +8,7 @@
 
     <!-- Display event image (check if there is one) -->
     @if($event->image)
-    <img src="{{ asset('storage/' . $event->image) }}" alt="Event Image">
+    <img src="{{ asset('storage/' . $event->image) }}" alt="Event Image" id="top">
     @endif
     <div id="info">
         <h4>Date:</h4>
