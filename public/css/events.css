@@ -40,14 +40,12 @@ h2 {
 }
 
 #top {
-    clear: both;
     text-align: center;
-    margin: 2em 5%;
-    display: block;
-    margin: 2em auto;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
+    margin-top: 1em; 
+    max-width: 50%; /* Adjust this value to your preference */
+    height: 50%; /* Maintain aspect ratio */
+    display: block; /* Remove any default inline styling */
+    margin: 2em auto; /* Center the image horizontally with top and bottom margin */
 }
 
 #f {
