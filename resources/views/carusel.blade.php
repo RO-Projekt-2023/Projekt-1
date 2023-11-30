@@ -13,21 +13,21 @@
             </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="{{ asset('images/prva.jpeg') }}" class="d-block w-100" alt="...">
+            <a class="nav-link" href="/events"><img src="{{ asset('images/prva.jpeg') }}" class="d-block w-100" alt="..."></a>
                <div class="carousel-caption d-none d-md-block">
                     <h5>Pete Davidsova noč</h5>
                     <p>25.10.2023, ob 17. uri</p>
                 </div>
             </div>
             <div class="carousel-item">
-              <img src="{{ asset('images/druga.png') }}" class="d-block w-100" alt="...">
+            <a class="nav-link" href="/events"><img src="{{ asset('images/druga.png') }}" class="d-block w-100" alt="..."> </a>
               <div class="carousel-caption d-none d-md-block">
                     <h5>Smeh je Zdravilo: Večer Komičnih Terapij</h5>
                     <p>27.11.2023, ob 20. uri</p>
                 </div>
             </div>
             <div class="carousel-item">
-              <img src="{{ asset('images/tretja.png') }}" class="d-block w-100" alt="...">
+            <a class="nav-link" href="/events"><img src="{{ asset('images/tretja.png') }}" class="d-block w-100" alt="..."> </a>
               <div class="carousel-caption d-none d-md-block">
                     <h5>Božični Smeholov: Komična Noč s Sijajem Smeha</h5>
                     <p>25.12.2023, ob 18. uri</p>
