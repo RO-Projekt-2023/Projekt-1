@@ -6,13 +6,15 @@
 <div class="events-container" style="margin-top: 60px;">
     <h2>{{ $event->name }}</h2>
 
-    <!-- Display event image -->
+    <!-- Display event image (check if there is one) -->
+    @if($event->image)
     <img src="{{ asset('storage/' . $event->image) }}" alt="Event Image">
+    @endif
     <div id="info">
         <h4>Date:</h4>
         <p>{{ $event->date }}</p>
         <h4>Location:</h4>
-        <p></p>
+        <p>{{ $event->location->name }}</p>
         <h4>Price of Tickets:</h4>
         <p>{{ $event->price_of_tickets }}€</p>
         <h4>Number of Tickets:</h4>
