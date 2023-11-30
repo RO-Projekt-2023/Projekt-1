@@ -40,11 +40,14 @@ h2 {
 }
 
 #top {
-    clear: both; /* Clear float to ensure #f is below #desc and #info */
+    clear: both;
     text-align: center;
     margin: 2em 5%;
-    margin-left: 26%;
-    margin-right: 26%;
+    display: block;
+    margin: 2em auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 #f {
