@@ -47,7 +47,7 @@
           
     </div>
 </div>
-<br><br><br><br><br><br>
+<br><br><br><br><br><br>x
 <div class="about-us-section">
   <h2 class="about-us-main-text">ABOUT US</h2>
   <p>Pri Neizvirnih komikih nismo le organizatorji komičnih predstav; ustvarjamo nepozabna doživetja polna smeha. Kot strastni ljubitelji humorja verjamemo, da je smeh univerzalni jezik, ki prinaša radost in povezuje ljudi iz vseh življenjskih poti.

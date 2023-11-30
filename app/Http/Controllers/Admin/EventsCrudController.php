@@ -87,6 +87,8 @@ class EventsCrudController extends CrudController
             'type' => 'checkbox',
             'default' => 1,
         ]);
+
+        
     }
 
     /**
