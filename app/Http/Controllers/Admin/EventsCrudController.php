@@ -44,6 +44,14 @@ class EventsCrudController extends CrudController
     {
         CRUD::setFromDb(); // set columns from db columns.
 
+        //add column for image
+        CRUD::addColumn([
+            'name' => 'image',
+            'label' => 'Image',
+            'type' => 'image',
+            'prefix' => 'storage/',
+        ]);
+
         /**
          * Columns can be defined using the fluent syntax:
          * - CRUD::column('price')->type('number');
