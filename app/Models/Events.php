@@ -11,6 +11,8 @@ class Events extends Model
     protected $table = 'events';
     protected $guarded = ['id'];
 
+    
+
     public function location()
     {
         return $this->belongsTo(Locations::class);
