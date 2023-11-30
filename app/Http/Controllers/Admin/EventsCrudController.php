@@ -19,6 +19,9 @@ class EventsCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
+
+    
+
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
      * 
@@ -88,7 +91,17 @@ class EventsCrudController extends CrudController
             'default' => 1,
         ]);
 
+        //create image upload
+        CRUD::addField([
+            'name' => 'image',
+            'label' => 'Image',
+            'type' => 'upload',
+            'upload' => true,
+            'disk' => 'public',
+        ]);
+
         
+
     }
 
     /**
