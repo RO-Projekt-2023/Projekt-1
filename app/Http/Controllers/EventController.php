@@ -64,6 +64,10 @@ class EventController extends Controller
                 'ticketCode' => $ticketCode,
                 'createdAt' => $ticket->created_at,
                 'price' => $event->price_of_tickets, // Assuming you have a price column in the events table
+                'eventName' => $event->name,
+                'eventDate' => $event->date,
+                'eventLocation' => $event->location->name,
+                
             ];
 
             Mail::send('emails.ticket', $data, function ($message) use ($email) {
