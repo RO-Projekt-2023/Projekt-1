@@ -1,7 +1,5 @@
-
-
 body {
-    background-color: #d9d9d9;
+    background-color: #ADADAD;
 }
 
 .events-container {
@@ -10,7 +8,13 @@ body {
 }
 
 h1 {
-    margin-top: 20px;
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px grey;
+    text-align: left;
+    padding-top:45px;
+    border-bottom: 2px solid grey;
+    box-shadow: 0 3px 0px rgba(255, 255, 255, 0.2);;
 }
 
 .search-input {
@@ -31,13 +35,19 @@ margin-top: 1em;
 }
 .item-container{
     float: left;
-    margin-top: 30px;
-   
+   padding-top: 80px;
+   /*text-align: center;*/
+   padding-left: 20px;
 }
-.name{
-    font-size: 1.7em;
-    font-weight: bold;
 
+.name{
+    font-size: 1.8em;
+    font-weight: bold;
+    text-shadow: 0px 0px 2px grey;
+    border-bottom: 2px solid grey;
+}
+b{
+    font-size: 120%;
 }
 .event-v2{
     margin-bottom: 20px;
@@ -45,19 +55,32 @@ margin-top: 1em;
     padding-left: 2.5em;
     background-color: #f9f9f9;
     border-radius: 8px;
-    line-height: 2.5;
+    line-height: 2.2;
     margin-right: 3em;
     margin-left: 3em;
-width: 52em;
+    width: 40em;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+}
+.event-v2:hover {
+    transform: scale(1.02);
 }
 .content-container{
     background-color: #2f2d2e;
-    float: right;
-    width: 27em;
+    float: left;
+    width: 22em;
     padding: 2em;
-    min-height: 97vh;
+    min-height: 300vh; /*tuki spremen velikost divou za leuga*/
     box-sizing: border-box;
 }
+.content-container2{
+    background-color: #2f2d2e;
+    float: right;
+    width: 22em;
+    padding: 2em;
+    min-height: 300vh;/*tuki spremen velikost divou za desnga*/
+    box-sizing: border-box;
+}
+
 .search-button {
     height: 40px;
     width: 104px;
@@ -79,6 +102,36 @@ width: 52em;
 .event a {
     text-decoration: none;
     color: blue;
+}
+
+.more {
+    text-align: center;
+    padding: 20px;
+    background-color: #FFB647;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-top: 140px;
+}
+
+.about-us {
+    text-align: center;
+    padding: 20px;
+    background-color: #FFB647;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.link {
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 8px 16px;
+    color: black;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 
