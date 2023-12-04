@@ -72,6 +72,18 @@ b{
     min-height: 300vh; /*tuki spremen velikost divou za leuga*/
     box-sizing: border-box;
 }
+
+@media screen and (max-width: 980px) {
+.content-container{
+    display: none;
+}
+.content-container2{
+    display: none;
+}
+}
+
+
+
 .content-container2{
     background-color: #2f2d2e;
     float: right;
